@@ -1,0 +1,196 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "get_prices",
+            "description": "Retrieves the current nightly and weekly rates for each unit (La Casita and Casa Frida).",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "unit_name": {
+                        "type": "string",
+                        "description": "The name of the unit (\"La Casita\" or \"Casa Frida\")."
+                    }
+                },
+                "required": [
+                    "unit_name"
+                ]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "check_availability",
+            "description": "Checks the availability of a specific unit for a given date range. Returns the total price in MXN for the stay if the unit is available, otherwise, returns that the unit is unavailable.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "unit_name": {
+                        "type": "string",
+                        "description": "The name of the unit (\"La Casita\" or \"Casa Frida\")."
+                    },
+                    "check_in_date": {
+                        "type": "string",
+                        "description": "The check-in date in YYYY-MM-DD format."
+                    },
+                    "check_out_date": {
+                        "type": "string",
+                        "description": "The check-out date in YYYY-MM-DD format."
+                    }
+                },
+                "required": [
+                    "unit_name",
+                    "check_in_date",
+                    "check_out_date"
+                ]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "book_unit",
+            "description": "Makes a reservation for a specific unit for a given date range.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "unit_name": {
+                        "type": "string",
+                        "description": "The name of the unit (\"La Casita\" or \"Casa Frida\")."
+                    },
+                    "check_in_date": {
+                        "type": "string",
+                        "description": "The check-in date in YYYY-MM-DD format."
+                    },
+                    "check_out_date": {
+                        "type": "string",
+                        "description": "The check-out date in YYYY-MM-DD format."
+                    },
+                    "guest_name": {
+                        "type": "string",
+                        "description": "The full name of the guest."
+                    },
+                    "guest_email": {
+                        "type": "string",
+                        "description": "The email address of the guest."
+                    },
+                    "guest_phone": {
+                        "type": "string",
+                        "description": "The phone/WhatsApp number of the guest."
+                    },
+                    "num_guests": {
+                        "type": "integer",
+                        "description": "The number of guests in the party."
+                    },
+                    "returning_guest": {
+                        "type": "boolean",
+                        "description": "Whether or not the guest has stayed with us before (true or false)"
+                    },
+                    "pets": {
+                        "type": "array",
+                        "description": "A list of dictionaries, where each dictionary represents a pet and contains the keys \"species\" (str) and \"details\" (str). Example: [{\"species\": \"dog\", \"details\": \"Large, adult, friendly\"}, {\"species\": \"cat\", \"details\": \"None\"}].",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "species": {
+                                    "type": "string"
+                                },
+                                "details": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "notes": {
+                        "type": "string",
+                        "description": "Any notes about the booking (e.g., special requests, language barrier)."
+                    }
+                },
+                "required": [
+                    "unit_name",
+                    "check_in_date",
+                    "check_out_date",
+                    "guest_name",
+                    "guest_email",
+                    "guest_phone",
+                    "num_guests",
+                    "returning_guest"
+                ]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "escalate_request",
+            "description": "Forwards a request to a senior manager, along with relevant information. The senior manager will then contact the customer.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "customer_name": {
+                        "type": "string",
+                        "description": "The name of the customer."
+                    },
+                    "customer_contact": {
+                        "type": "string",
+                        "description": "The customer's email or phone number."
+                    },
+                    "request_details": {
+                        "type": "string",
+                        "description": "A description of the request or issue."
+                    },
+                    "priority_level": {
+                        "type": "integer",
+                        "description": "Priority level (1: urgent, 2: important, 3: normal)"
+                    }
+                },
+                "required": [
+                    "customer_name",
+                    "customer_contact",
+                    "request_details",
+                    "priority_level"
+                ]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "log_interaction",
+            "description": "Document and classify aspects of the current conversation",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "category": {
+                        "type": "string",
+                        "description": "Category of interaction",
+                        "enum": ["presales_inquiry", "new_booking", "existing_booking", "guest_services", "concierge", "maintenance", "other"]
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "Short (3-5 word) title capturing the essence of the conversation"
+                    },
+                    "summary": {
+                        "type": "string",
+                        "description": "Detailed yet concise summary of the conversation"
+                    },
+                    "action_required": {
+                        "type": "boolean",
+                        "description": "True if new booking or escalation tool was used"
+                    },
+                    "customer_details": {
+                        "type": "string",
+                        "description": "Customer name and/or contact info if available"
+                    }
+                },
+                "required": [
+                    "category",
+                    "title",
+                    "summary",
+                    "action_required"
+                ]
+            }
+        }
+    }
+]

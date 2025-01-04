@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Back Office</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Back Office</h1>
+    <div id="login-container">
+        <div class="login-form">
+            <label for="password">Password:</label>
+            <input type="password" id="password" />
+            <button onclick="login()">Login</button>
+        </div>
+    </div>
+    <div id="admin-container" style="display:none;">
+        <div class="tabs">
+            <button class="tab-button active" onclick="switchTab('bookings')">Bookings</button>
+            <button class="tab-button" onclick="switchTab('units')">Unit Management</button>
+            <button class="tab-button" onclick="switchTab('site-content')">Site Content</button>
+        </div>
+        
+        <div id="bookings-tab" class="tab-content active">
+            <h2>Reservations</h2>
+            <div class="filters">
+                <label>
+                    <input type="checkbox" value="approved" checked onchange="handleFilterChange()">
+                    Approved
+                </label>
+                <label>
+                    <input type="checkbox" value="pending" checked onchange="handleFilterChange()">
+                    Pending
+                </label>
+                <label>
+                    <input type="checkbox" value="rejected" onchange="handleFilterChange()">
+                    Rejected
+                </label>
+            </div>
+            <div id="reservations"></div>
+        </div>
+
+        <div id="units-tab" class="tab-content">
+            <div class="units-section">
+                <h2>Unit Management</h2>
+                <div id="units-grid" class="units-grid">
+                    <!-- Unit cards will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <div id="site-content-tab" class="tab-content">
+            <div class="site-content-section">
+                <h2>Site Content Management</h2>
+                <form id="site-content-form" class="content-form">
+                    <div class="form-group">
+                        <label>Hero Image</label>
+                        <div class="image-upload">
+                            <img id="hero-preview" class="image-preview" src="" alt="No image uploaded">
+                            <input type="file" id="hero-image" name="hero-image" accept="image/*">
+                            <button type="button" onclick="uploadSiteImage('hero')">Upload Hero Image</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="about-text">About Text</label>
+                        <textarea id="about-text" name="about-text" rows="4"></textarea>
+                        <button type="button" onclick="updateAboutText()">Update Text</button>
+                    </div>
+
+                    <div class="form-group">
+                        <label>About Image 1</label>
+                        <div class="image-upload">
+                            <img id="about1-preview" class="image-preview" src="" alt="No image uploaded">
+                            <input type="file" id="about-image1" name="about-image1" accept="image/*">
+                            <button type="button" onclick="uploadSiteImage('about1')">Upload Image 1</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>About Image 2</label>
+                        <div class="image-upload">
+                            <img id="about2-preview" class="image-preview" src="" alt="No image uploaded">
+                            <input type="file" id="about-image2" name="about-image2" accept="image/*">
+                            <button type="button" onclick="uploadSiteImage('about2')">Upload Image 2</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

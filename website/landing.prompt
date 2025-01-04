@@ -1,0 +1,58 @@
+Make a landing page for the Casa Blues Bed & Breakfast in San Cristobal De Las Casas, Mexico
+
+The property is located in the historic El Cerillo neighborhood, a short walk from all of the attractions, shops, and restaurants sancris has to offer.
+
+
+Special features:
+
+Beautiful courtyard and garden area exclusively for our guests
+Owner is Mexican-American and speaks English + Spanish
+Safe and secure
+Kid Friendly
+Pet Friendly: we welcome cats and well-behaved dogs, and have a large area for your pets to run around and enjoy themselves. Your pets will have companionship from 2 cats and 2 chihuahuas who live here. You are responsible for cleaning up after your pet
+Wifi
+All units come with a traditional fireplace and firewood is included for the duration of your stay
+
+
+There are 2 units:
+
+Casa Frida
+Spacious 1 bedroom apartment
+
+Queen sized bed in master bedroom
+Large open concept living and dining room with fireplace
+Split level kitchen overlooking the garden
+Terrace with comfortable chairs
+900 pesos / night
+5000 pesos / week
+
+Casa Cuyo
+Cosy 1 bedroom loft
+Newly renovated with comfortable furniture and beautiful decor
+Spacious kitchen with new appliances
+Sunny terrace area
+fireplace
+
+700 pesos / night
+4000 pesos / week
+
+
+Other Stuff:
+
+Use the colors of the logo to guide your design and create a consistent brand identity
+
+Use placeholder images with alt tags describing what image should go there, we have lots of photos and a photographer is on site if we need more
+
+Calls to action: "Book Your Stay", "Learn More" (For each unit). For now link them to #
+
+Contact section with map showing the location in sancris (Dr Navarro 20, 29230) and the property manager's whatsapp link. Her name is Sarah and the phone number is +52 967 115 6816 
+
+Social Links: FB, Insta
+
+
+Technical Requirements:
+
+An HTML page that uses Tailwindcss (from CDN), with a <style> section to theme it appropriately for the brand and the nature of what we're selling
+If you need icons, use FontAwesome
+Code should be clean and easy to maintain
+Optimized meta tags and OG etc, for search engines and social sharing...

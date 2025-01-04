@@ -3,7 +3,7 @@ const path = require('path');
 const multer = require('multer');
 const db = require('./db');
 const app = express();
-const port = 3000;
+const port = process.env.CB_PORT || 3000;
 
 app.use(express.json());
 

@@ -1,5 +1,5 @@
 import { executeToolAsync } from './chat-tools.js';
-import { OPENAI_API_KEY } from '../config.js';
+import { OPENAI_API_KEY } from './config.js';
 
 const closeChat = document.getElementById('closeChat');
 const chatMessages = document.getElementById('chatMessages');
@@ -184,6 +184,8 @@ async function sendMessage() {
     // Perform inference with updated conversation history
     await performInference();
 }
+
+
 
 // Initialize the chat when the page loads
 initializeChat();

@@ -199,3 +199,9 @@ header {
   text-decoration: none;
   cursor: pointer;
 }
+
+@media (max-width: 499px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
